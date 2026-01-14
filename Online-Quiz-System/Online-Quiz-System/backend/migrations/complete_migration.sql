@@ -1,3 +1,4 @@
+
 -- ============================================================================
 -- COMPLETE DATABASE MIGRATION FOR QUIZ PLATFORM
 -- ============================================================================
@@ -169,55 +170,4 @@ CREATE TABLE IF NOT EXISTS `exam_question_progress` (
     INDEX `idx_question` (`question_id`),
     INDEX `idx_answered` (`is_answered`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- ============================================================================
--- SAMPLE DATA (OPTIONAL)
--- ============================================================================
--- Uncomment the following lines to insert sample data for testing
-
--- Sample Teacher Account
--- Password: password (hashed with bcrypt)
--- INSERT INTO `teachers` (`full_name`, `email`, `password_hash`) 
--- VALUES ('Demo Teacher', 'teacher@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
-
--- Sample Quiz
--- INSERT INTO `quizzes` (`title`, `description`, `teacher_id`, `access_code`, `duration_minutes`, `status`, `class`) 
--- VALUES ('Sample Quiz', 'This is a demo quiz', 1, 'DEMO123', 30, 'ACTIVE', 'Grade 10');
-
--- Sample Questions
--- INSERT INTO `questions` (`quiz_id`, `type`, `question_text`, `options`, `correct_answer`, `points`) VALUES
--- (1, 'MCQ', 'What is 2 + 2?', '["2", "3", "4", "5"]', '4', 1),
--- (1, 'TRUE_FALSE', 'The Earth is flat.', '["True", "False"]', 'False', 1),
--- (1, 'ESSAY', 'Explain the water cycle.', NULL, 'The water cycle involves evaporation, condensation, and precipitation.', 5);
-
--- ============================================================================
--- VERIFICATION QUERIES
--- ============================================================================
--- Run these queries after migration to verify the setup
-
--- Check all tables were created
--- SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES 
--- WHERE TABLE_SCHEMA = 'quiz_platform' ORDER BY TABLE_NAME;
-
--- Check table row counts
--- SELECT 
---     (SELECT COUNT(*) FROM teachers) as teachers,
---     (SELECT COUNT(*) FROM quizzes) as quizzes,
---     (SELECT COUNT(*) FROM questions) as questions,
---     (SELECT COUNT(*) FROM students) as students,
---     (SELECT COUNT(*) FROM student_answers) as student_answers,
---     (SELECT COUNT(*) FROM exam_sessions) as exam_sessions,
---     (SELECT COUNT(*) FROM exam_question_progress) as exam_question_progress;
-
--- ============================================================================
--- MIGRATION COMPLETE
--- ============================================================================
--- All tables have been created successfully!
--- 
--- Next Steps:
--- 1. Create a teacher account (register through the app or insert manually)
--- 2. Configure backend/config/Database.php with your credentials
--- 3. Start the application and begin creating quizzes
--- 
--- For support, refer to the README.md file
--- ============================================================================
+==============================
